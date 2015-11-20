@@ -1,0 +1,11 @@
+nicolas:
+  name: Nico Fuenzalida
+  email: nicolas@example.com
+  mobile_num: 569123456789
+  password_digest: <%= User.digest('password') %>
+
+juan:
+  name: Juan Ortega
+  email: juan@example.gov
+  mobile_num: 569123456780
+  password_digest: <%= User.digest('password') %>
