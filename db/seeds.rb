@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create!(name: "Example User", email: "example@memocit.ex", mobile_num: "56964257820", password: "foobar", password_confirmation: "foobar")
 
-9.times do |n|
+30.times do |n|
   name = Faker::Name.name
   email = "example-#{n+1}@memocity.cl"
   mobile_num = "5696425781#{n}"
