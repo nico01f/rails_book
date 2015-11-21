@@ -1,29 +1,23 @@
 <% provide(:title, 'Registrar') %>
 <h1><%= yield(:title) %></h1>
+<div class="alert alert-warning">
+	Al finalizar las pruebas, los datos registrados serán borrados.
+</div>
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 		<%= form_for(@user)  do |f| %>
 		<%= render 'shared/error_messages' %>
 		<%= f.text_field :name, class:"form-control", placeholder: "Nombre" %>
-		<br>
 		<%= f.text_field :last_name, class:"form-control", placeholder: "Apellido" %>
-		<br>
 		<%= f.email_field :email, class:"form-control", placeholder: "Correo" %>
-		<br>
 		<%= f.text_field :mobile_num, class:"form-control" ,placeholder: "Número de móvil, ejemplo: 5691234567" %>
-		<br>
-		<%= f.text_field :city, class:"form-control", placeholder: "Ciudad" %>
-		<br>
 		<%= f.text_field :country, class:"form-control", placeholder: "País" %>
-		<br>
+		<%= f.text_field :city, class:"form-control", placeholder: "Ciudad" %>
 		<%= f.text_field :address, class:"form-control", placeholder: "Dirección" %>
-		<br>
+		<%= f.label "Fecha de nacimiento" %>
 		<%= f.date_field  :birth_date, class:"form-control" %>
-		<br>
 		<%= f.password_field :password, class:"form-control", placeholder: "Contraseña" %>
-		<br>
 		<%= f.password_field :password_confirmation, class:"form-control", placeholder: "Confirma tu contraseña" %>
-		<br>
 		<%= f.submit "Registrar en Memocity", class: "btn btn-success btn-lg" %>
 		<% end %>
 	</div>

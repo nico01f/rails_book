@@ -20,6 +20,10 @@ html {
   overflow-y: scroll;
 }
 
+.jumbotron {
+  background-color: #50a0ee;
+}
+
 body {
   padding-top: 60px;
 }
@@ -71,6 +75,7 @@ p {
 
 #logo {
   float: left;
+
   margin-right: 10px;
   font-size: 1.7em;
   color: white;
@@ -80,7 +85,8 @@ p {
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: white;
+    transition: all 0.5s linear;
+    color: #008080;
     text-decoration: none;
   }
 }
@@ -145,11 +151,6 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
 .stats {
   overflow: auto;
   a {
@@ -171,13 +172,6 @@ aside {
   }
 }
 
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-}
 
 /* forms */
 
