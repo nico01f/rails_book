@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   #END login pages
 
   resources :users
+  resources :account_activations, only: [:edit]
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

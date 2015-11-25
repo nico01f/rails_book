@@ -17,8 +17,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get edit_user_path(@user)
     assert_template 'users/edit'
-    name = "Foo"
-    last_name = "Bar"
+    name = "Nico"
+    last_name = "Fuenzalida"
     mobile_num = "569123456789"
     email = "foo@bar.com"
     patch user_path(@user), user: { name: name, last_name: last_name, email: email, mobile_num: mobile_num, password: "", password_confirmation: "" }
@@ -35,8 +35,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     get edit_user_path(@user)
     log_in_as(@user)
     assert_redirected_to edit_user_path(@user)
-    name = "Foo Bar"
-    email = "foo@bar.com"
+    name = "Nico Fuenzalida"
+    email = "nico@memocity.cl"
     patch user_path(@user), user: {name: name, email: email, password: "", password_confirmation: ""}
     assert_not flash.empty?
     assert_equal name, @user.name

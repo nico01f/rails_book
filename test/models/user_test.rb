@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: "Nico", last_name: "Fuenzalida", email: "nico01f@example.com", mobile_num: "5691234567", city: "Santiago", country: "Chile", address: "Los ejemplos 123", birth_date: nil, password: "foobar", password_confirmation: "foobar")
+    @user = User.new(name: "Nico", last_name: "Fuenzalida", email: "nico@memocity.cl", mobile_num: "5691234567", city: "Santiago", country: "Chile", address: "Los ejemplos 123", birth_date: nil, password: "foobar", password_confirmation: "foobar")
   end
 
   test "should be valid" do
@@ -47,7 +47,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email should not be to long" do
-    @user.email = "a" * 244 + "@example.com"
+    @user.email = "a" * 244 + "@memocity.cl"
   end
 
   test "last name should not to bee long" do
@@ -73,7 +73,7 @@ class UserTest < ActiveSupport::TestCase
   #Email and mobile number validation must be valid
 
   test "email validation should rejectd invalid address" do
-    valid_addresses = %w[nico01f@example.com nico01f@example NICO01f@example.COM]
+    valid_addresses = %w[nico01f@memocity.cl nico01f@memocity.cl NICO01f@memocity.cl]
     valid_addresses.each do |valid_address|
       @user.email = valid_address
       assert @user.valid?, "#{valid_address.inspect}, Write some valid email address."
@@ -106,7 +106,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "authenticated? should return false for a user with nil digest" do
-    assert_not @user.authenticated?('')
+    assert_not @user.authenticated?(:remember, '')
   end
 
 end
